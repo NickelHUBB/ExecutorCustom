@@ -553,7 +553,8 @@ end)
 spawn(function()
     while task.wait() do
         if _G.Start then
-            local inCombat = game:GetService("Players"):WaitForChild("nmh7h"):WaitForChild("PlayerGui"):WaitForChild("UI"):WaitForChild("InCombat")
+			local inCombat = LocalPlayer.PlayerGui.UI.InCombat
+            --local inCombat = game:GetService("Players"):WaitForChild("nmh7h"):WaitForChild("PlayerGui"):WaitForChild("UI"):WaitForChild("InCombat")
             if (LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()) and LocalPlayer.Character:WaitForChild('HumanoidRootPart',2) then
                 if inCombat.Visible then
                     LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1059.395751953125, 979.66796875, -9738.90234375)
@@ -598,7 +599,7 @@ spawn(function()
         if _G.Start then
             if (LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()) then
                 if Percent(LocalPlayer.Character:WaitForChild('Stats',2):GetAttribute("Stamina"),GetStamina()) <= Stamina then
-                    local inCombatSS = game:GetService("Players"):WaitForChild("nmh7h"):WaitForChild("PlayerGui"):WaitForChild("UI"):WaitForChild("InCombat")
+					local inCombatSS = LocalPlayer.PlayerGui.UI.InCombat
                     if inCombatSS.Visible then
                         wait()
                     else
@@ -613,7 +614,7 @@ end)
 spawn(function()
     while task.wait() do 
         if _G.Start then
-            local inCombatS = game:GetService("Players"):WaitForChild("nmh7h"):WaitForChild("PlayerGui"):WaitForChild("UI"):WaitForChild("InCombat")
+			local inCombatS = LocalPlayer.PlayerGui.UI.InCombat
             if LocalPlayer.Character == nil and UI.HUD.Visible == false then
                 if inCombatS.Visible then
                     wait()
